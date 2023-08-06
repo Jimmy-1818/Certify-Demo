@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!---COOKIE-BOT----->
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="d6c31a3e-a4a1-44c3-8459-094604ba2906"
+        data-blockingmode="auto" type="text/javascript"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Genuiny - Home</title>
+
+    <!----Jquery CDN--->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+    <!----Favicon----->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <!---<link rel="manifest" href="images/favicon/site.webmanifest">--->
+    <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="images/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="images/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <!--------BOOTSTRAP----------->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+
+    <!--STYLE-->
+    <link rel="stylesheet" type="text/css" href="style/navbar.css">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="stylesheet" type="text/css" href="private/digital-potential/affiliation-calculator.css">
+
+
+    <!---Fonts links
+	<link rel="preload" href="fonts/Montserrat/Montserrat-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
+	<link rel="preload" href="fonts/Inter/Inter-VariableFont_slnt,wght.ttf" as="font" type="font/ttf" crossorigin>--->
+
+    <!-------JQUERY-------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="full-nav">
+        <nav class="desktop-nav">
+            <div class="container-navbar">
+                <div class="logo"><a class="page-link" href="https://genuiny.it"><img src="images/logo.png"
+                            alt="logo"></a></div>
+                <div class="menu"><a class="page-link" href="private">Cos'è Certify?</a>
+                    <a class="page-link" href="business">F.A.Q.</a><a class="page-link"
+                        href="association">Contattaci</a>
+                    <div style="display: none;" class="grid-item dropdown-center dropdown language_group" style="width: 62px;">
+                        <!--width so to avoid moving other titles-->
+                        <button class="lang_btn btn btn-secondary dropdown-toggle" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <div lang="eng" class="current-language-flex"><span>EN</span><img class="lang_flag"
+                                    src="images/language-flags/eng_flag.svg"></div>
+                            <div lang="ita" class="current-language-flex display_none"><span>IT</span><img
+                                    class="lang_flag" src="images/language-flags/ita_flag.svg"></div>
+                            <div lang="slv" class="current-language-flex display_none"><span>SL</span><img
+                                    class="lang_flag" src="images/language-flags/slv_flag.svg"></div>
+                            <div lang="spa" class="current-language-flex display_none"><span>ES</span><img
+                                    class="lang_flag" src="images/language-flags/spa_flag.svg"></div>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a onclick="set_lang_manually('eng')" class="dropdown-item"><img class="lang_flag"
+                                        src="images/language-flags/eng_flag.svg"><span
+                                        style="font-size: 1em;">English</span></a></li>
+                            <li><a onclick="set_lang_manually('spa')" class="dropdown-item"><img class="lang_flag"
+                                        src="images/language-flags/spa_flag.svg"><span
+                                        style="font-size: 1em;">Español</span></a></li>
+                            <li><a onclick="set_lang_manually('ita')" class="dropdown-item"><img class="lang_flag"
+                                        src="images/language-flags/ita_flag.svg"><span
+                                        style="font-size: 1em;">Italiano</span></a></li>
+                            <li><a onclick="set_lang_manually('slv')" class="dropdown-item"><img class="lang_flag"
+                                        src="images/language-flags/slv_flag.svg"><span
+                                        style="font-size: 1em;">Slovenščina </span></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="hamburger" onclick="hamburger_click()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+        <nav class="mobile-nav">
+            <a class="page-link" href="cos'è Certify">Cos'è Certify?</a>
+            <a class="page-link" href="F.A.Q.">F.A.Q.</a>
+            <a class="page-link" href="contattaci">Contattaci</a>
+            <div style="display: none;" class="grid-item dropdown-center dropdown language_group">
+                <button class="lang_btn btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <div lang="eng" class="current-language-flex"><span>EN</span><img class="lang_flag"
+                            src="images/language-flags/eng_flag.svg"></div>
+                    <div lang="ita" class="current-language-flex display_none"><span>IT</span><img class="lang_flag"
+                            src="images/language-flags/ita_flag.svg"></div>
+                    <div lang="slv" class="current-language-flex display_none"><span>SL</span><img class="lang_flag"
+                            src="images/language-flags/slv_flag.svg"></div>
+                    <div lang="spa" class="current-language-flex display_none"><span>ES</span><img class="lang_flag"
+                            src="images/language-flags/spa_flag.svg"></div>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a onclick="set_lang_manually('eng'); hamburger_click()" class="dropdown-item"><img
+                                class="lang_flag" src="images/language-flags/eng_flag.svg"><span
+                                style="font-size: 1em;">English </span></a></li>
+                    <li><a onclick="set_lang_manually('spa'); hamburger_click()" class="dropdown-item"><img
+                                class="lang_flag" src="images/language-flags/spa_flag.svg"><span
+                                style="font-size: 1em;">Español </span></a></li>
+                    <li><a onclick="set_lang_manually('ita'); hamburger_click()" class="dropdown-item"><img
+                                class="lang_flag" src="images/language-flags/ita_flag.svg"><span
+                                style="font-size: 1em;">Italiano </span></a></li>
+                    <li><a onclick="set_lang_manually('slv'); hamburger_click()" class="dropdown-item"><img
+                                class="lang_flag" src="images/language-flags/slv_flag.svg"><span
+                                style="font-size: 1em;">Slovenščina </span></a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="opacity"></div>
+    </div>
+
+
+    <main class="index3 main-container">
+        <header class="choice">
+            <div class="header_container">
+                <img class="left grid_item header_image" src="images/product.png">
+                <h1 class="grid_item header_original_product">Prodotto originale!<img src="images/brandmark.png"></h1>
+                <h1 class="grid_item header_hash">Hash del certificato blockchain:<br><span class="no-wrap inherit"><span id="hash" style="font-size: 0.8em; user-select: all;">QmYHmmvVQdh5W9kKKAJ2eRrHri6N3KjKYGrBQYY9NW5jwF</span><img id="copy-hash" onclick="copy_hash();" src="images/copy-b.png" alt="copy hash button"></span></h1>
+                <div class="verify_in_genuiny grid_item header_verify" onclick="window.open('https://nft.genuiny.com/verifica', '_blank');" style="white-space: nowrap;">
+                    <span class="inherit">Verifica Hash su Genuiny</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="7" height="auto" viewBox="0 0 7 7" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3 2H1C0.447715 2 0 2.44772 0 3V6C0 6.55228 0.447715 7 1 7H4C4.55228 7 5 6.55228 5 6V4H4.2V6C4.2 6.11046 4.11046 6.2 4 6.2H1C0.889543 6.2 0.8 6.11046 0.8 6V3C0.8 2.88954 0.889543 2.8 1 2.8H3V2Z" fill="white"/>
+                        <path d="M5.07919 2.51535C4.96598 2.79811 4.9659 3.06686 5.06762 3.3386C5.04487 3.34072 5.02836 3.34367 5.01172 3.34361C4.72875 3.34515 4.44571 3.3474 4.16284 3.3468C4.11066 3.34671 4.07282 3.36358 4.03516 3.40153C3.71216 3.72681 3.38302 4.04615 3.0652 4.37639C2.89731 4.55083 2.62172 4.55327 2.46431 4.39712C2.29342 4.22754 2.29835 3.969 2.47924 3.78742C2.80421 3.46121 3.12994 3.13574 3.45643 2.81103C3.49247 2.77499 3.50911 2.74017 3.50912 2.68955C3.51021 2.03398 3.51249 1.37839 3.51595 0.722798C3.51613 0.677029 3.51321 0.631283 3.51505 0.585499C3.52137 0.42365 3.59638 0.29746 3.74205 0.221031C3.88773 0.144602 4.03043 0.156856 4.16148 0.242376C4.28637 0.323905 4.34724 0.44507 4.34717 0.595759C4.34695 1.058 4.34357 1.52039 4.34186 1.9827C4.34124 2.14011 4.34391 2.29736 4.34098 2.45485C4.34004 2.50251 4.35607 2.51578 4.40141 2.51528C4.60074 2.51299 4.79995 2.51347 4.99919 2.51313C5.02261 2.51312 5.04601 2.51441 5.07919 2.51535Z" fill="white"/>
+                        <path d="M6.51501 3.41783C6.18722 3.74067 5.64165 3.65859 5.43094 3.25328C5.27995 2.96283 5.35541 2.61318 5.61472 2.40061C5.86038 2.19917 6.22904 2.20603 6.4749 2.41153C6.74031 2.6334 6.79832 3.02613 6.59659 3.31869C6.57243 3.35375 6.54237 3.38489 6.51501 3.41783Z" fill="white"/>
+                        </svg>
+                </div>
+                <h1 class="grid_item header_visit">Visita <a style="font-size: inherit;" href="#">ecoberrycrunchies.com</a></h1>
+            </div>
+        </header>
+
+
+        <section class="card card-story">
+            <h1 class="title">Storia</h1>
+            <p>"EcoBerry Crunchies" è nato dalla passione per uno snack nutriente e sostenibile. Con ingredienti biologici e coltivati responsabilmente, abbiamo creato un'armonia tra gusto e valore nutrizionale. Il nostro packaging eco-friendly testimonia il nostro impegno per la sostenibilità. Ogni morso rivela l'autenticità delle fragole e dei lamponi essiccati. La nostra missione è ispirare uno stile di vita sano e consapevole, preservando l'ambiente. Con "EcoBerry Crunchies", deliziare il palato significa anche prendersi cura del nostro pianeta.</p>
+            <div class="outer_container">
+                <div class="flex_container_steps">
+                    <div class="scroll scroll-right"></div>
+                    <div class="scroll scroll-left"></div>
+                    <div class="step">
+                        <div class="image-background"></div>
+                        <div class="step_text">
+                            <p class="step_text ">
+                                Selezione degli Ingredienti: Scelta di ingredienti di alta qualità da coltivazioni sostenibili.
+                            </p>
+                            <h6></h6>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="image-background"></div>
+                        <div class="step_text">
+                            <p class="step_text ">
+                                Pulizia e Preparazione: Rimozione impurità per garantire qualità.
+                            </p>
+                            <h6></h6>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="image-background"></div>
+                        <div class="step_text">
+                            <p class="step_text ">
+                                Misurazione e Mescolamento: Ingredienti misurati e mescolati uniformemente.
+                            </p>
+                            <h6></h6>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="image-background"></div>
+                        <div class="step_text">
+                            <p class="step_text ">
+                                Cottura: Cottura a temperature controllate per croccantezza.
+                            </p>
+                            <h6></h6>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="image-background"></div>
+                        <div class="step_text">
+                            <p class="step_text ">
+                                Aggiunta delle Bacche Essiccate: Integrazione di fragole e lamponi essiccati.
+                            </p>
+                            <h6></h6>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="image-background"></div>
+                        <div class="step_text">
+                            <p class="step_text ">
+                                Raffreddamento: Raffreddamento per stabilità strutturale.
+                            </p>
+                            <h6></h6>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="image-background"></div>
+                        <div class="step_text">
+                            <p class="step_text ">
+                                Imballaggio: Confezionamento in materiali eco-compatibili.
+                            </p>
+                            <h6></h6>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="image-background"></div>
+                        <div class="step_text">
+                            <p class="step_text ">
+                                Controllo di Qualità: Verifiche per standard elevati di sicurezza.
+                            </p>
+                            <h6></h6>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="image-background"></div>
+                        <div class="step_text">
+                            <p class="step_text ">
+                                Etichettatura: Informazioni nutrizionali e certificazioni sulle confezioni.
+                            </p>
+                            <h6></h6>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="image-background"></div>
+                        <div class="step_text">
+                            <p class="step_text ">
+                                Distribuzione: Raggiungimento di punti vendita fisici e online.
+                            </p>
+                            <h6></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+
+        <section class="card card-story">
+            <h1 class="title">Informazioni nutrizionali</h1>
+            <div class="nutritional_table_container">
+                <table class="nutritional_table">
+                    <tbody>
+                        <tr>
+                            <th>Valori nutrizionali</th>
+                            <th>Per 100g</th>
+                            <th>Per porzione</th>
+                            <th>%GDA (per porzione)</th>
+                        </tr>
+                        <tr>
+                            <td>Calorie</td>
+                            <td>400kcal</td>
+                            <td>120kcal</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td>Grassi</td>
+                            <td>16g</td>
+                            <td>5g</td>
+                            <td>7,2</td>
+                        </tr>
+                        <tr>
+                            <td>- Saturi</td>
+                            <td>1,5g</td>
+                            <td>0,5g</td>
+                            <td>2,5</td>
+                        </tr>
+                        <tr>
+                            <td>Carboidrati</td>
+                            <td>57g</td>
+                            <td>17g</td>
+                            <td>6,3</td>
+                        </tr>
+                        <tr>
+                            <td>- Zuccheri</td>
+                            <td>20g</td>
+                            <td>6g</td>
+                            <td>6,7</td>
+                        </tr>
+                        <tr>
+                            <td>Fibre</td>
+                            <td>10g</td>
+                            <td>3g</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>Proteine</td>
+                            <td>13g</td>
+                            <td>4g</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <td>Sodio</td>
+                            <td>13g</td>
+                            <td>4g</td>
+                            <td>2,1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>*GDA = La quantità giornaliera raccomandata per un adulto è basata su una dieta
+                che prevede un apporto medio giornaliero di 2000 kcal. Il fabbisogno
+                nutrizionale di un individuo può essere maggiore o minore, a seconda del sesso,
+                età, attività fisica ed altri fattori.</p>
+        </section>
+       
+
+        <section class="card">
+            <div class="card__main">
+                    <div class="cardItem__aux">
+                        <h1 class="productStory__title">Ingredienti</h1>
+                        <div class="productStory__description">
+                            <div class="display-text-group"><span class="displayed-text">
+                                <p>Ingredienti: Fiocchi di avena integrali, sciroppo di riso, zucchero di canna, fiocchi di frumento integrale, fiocchi di segale integrale, pezzi di fragole essiccate, pezzi di lamponi essiccati, olio di semi di girasole, farina di riso, aromi naturali.</p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </section>
+
+
+        <section class="card card-more-info">
+            <div class="card__main">
+                    <div class="cardItem__aux">
+                        <h1 class="productStory__title">Fatti e info</h1>
+                        <div class="productStory__description">
+                            <div class="display-text-group"><span class="displayed-text">
+                                <div class="cards_container">
+                                    <div class="card">
+                                        <div class="card-content">
+                                            <img src="images/icons/icon.svg">
+                                            <h6>Caratteristiche</h6>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-content">
+                                            <img src="images/icons/icon.svg">
+                                            <h6>Imballaggio</h6>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-content">
+                                            <img src="images/icons/icon.svg">
+                                            <h6>Trasporto</h6>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-content">
+                                            <img src="images/icons/icon.svg">
+                                            <h6>Stampa</h6>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="card__main">
+                    <div class="cardItem__aux">
+                        <h1 class="productStory__title">Certificazioni</h1>
+                        <div class="productStory__description">
+                            <div class="display-text-group"><span class="displayed-text">
+                                <div class="image_container_certifications">
+                                    <div class="item-container">
+                                        <img src="images/food_certified 1.png">
+                                    </div>
+                                    <div class="item-container">
+                                        <img src="images/food_certified 2.png">
+                                    </div>
+                                    <div class="item-container">
+                                        <img src="images/food_certified 3.png">
+                                    </div>
+                                    <div class="item-container">
+                                        <img src="images/food_certified 4.png">
+                                    </div>
+                                    <div class="item-container">
+                                        <img src="images/food_certified 5.png">
+                                    </div>
+                                    <div class="item-container">
+                                        <img src="images/food_certified 6.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </section>
+
+
+        <section class="card">
+            <div class="card__main">
+                    <div class="cardItem__aux">
+                        <h1 class="productStory__title">Mappa</h1>
+                        <div class="productStory__description">
+                            <div class="display-text-group"><span class="displayed-text">
+                                <img class="map" src="images/map.png" alt="map">
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </section> 
+
+
+
+
+
+
+
+        <!-- Modal -->
+        <div class="modal fade modal-table" id="modal-rendita" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-x">
+                    <div class="spans"><span></span><span></span></div>
+                </div>
+                <div class="modal-content">
+                    <div class="modal-body">
+
+                        <div class="table-container">
+                            <div class="table-title" id="table-rendita">Premio Rendita</div>
+                            <div class="table-grid tables">
+                                <div class="table-item first-row"><span>Filiera</span></div>
+                                <div class="table-item first-row"><span>Utenti certificati</span></div>
+                                <div class="table-item first-row"><span>Valore per utente</span></div>
+                                <div class="table-item first-row"><span>Valore per filiera</span></div>
+
+                                <div class="table-item">1<sup>a</sup></div>
+                                <div class="table-item resize-text" id="tab2_u1">0</div>
+                                <div class="table-item"><span class="yellow_amount">2%</span><span class="monthly">5
+                                        €</span></div>
+                                <div class="table-item resize-text" id="tab2_p1">0,00&nbsp;€</div>
+
+                                <div class="table-item">2<sup>a</sup></div>
+                                <div class="table-item resize-text" id="tab2_u2">0</div>
+                                <div class="table-item"><span class="yellow_amount">1%</span><span class="monthly">5
+                                        €</span></div>
+                                <div class="table-item resize-text" id="tab2_p2">0,00&nbsp;€</div>
+
+                                <div class="table-item">3<sup>a</sup></div>
+                                <div class="table-item resize-text" id="tab2_u3">0</div>
+                                <div class="table-item"><span class="yellow_amount">1%</span><span class="monthly">5
+                                        €</span></div>
+                                <div class="table-item resize-text" id="tab2_p3">0,00&nbsp;€</div>
+
+                                <div class="table-item">4<sup>a</sup></div>
+                                <div class="table-item resize-text" id="tab2_u4">0</div>
+                                <div class="table-item"><span class="yellow_amount">1%</span><span class="monthly">5
+                                        €</span></div>
+                                <div class="table-item resize-text" id="tab2_p4">0,00&nbsp;€</div>
+
+                                <div class="table-item">5<sup>a</sup></div>
+                                <div class="table-item resize-text" id="tab2_u5">0</div>
+                                <div class="table-item"><span class="yellow_amount">2%</span><span class="monthly">5
+                                        €</span></div>
+                                <div class="table-item resize-text" id="tab2_p5">0,00&nbsp;€</div>
+
+                                <div class="table-item last-row"></div>
+                                <div class="table-item last-row">Totale utenti:<br><span id="tab2_u12345">0</span>
+                                </div>
+                                <div class="table-item last-row"></div>
+                                <div class="table-item last-row">Totale premio:<br><span
+                                        class="rendita_result">0,00&nbsp;€</span><br></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade modal-white" id="average-profit" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-x">
+                    <div class="spans"><span></span><span></span></div>
+                </div>
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <h1>Rendita Media</h1>
+                        <p>
+                            Il valore rendita media è il profitto medio <b>mensile</b> degli utenti della
+                            filiera.<br><br>
+
+                            Influenza dunque il premio "Rendita", in quanto questo si calcola in percentuale alla
+                            rendita media.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade modal-white" id="digital-profit" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-x">
+                    <div class="spans"><span></span><span></span></div>
+                </div>
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <h1 style="color: #0abab5">Digital Profit</h1>
+                        <p>Grazie alla blockchain etica Genuiny il futuro dell'economia digitale è orientato alla
+                            legale e legittima proprietà da parte degli utenti stessi.<br><br>
+
+                            <b style="font-size: 1.2em">Che cosa è il Digital Profit?</b><br>
+                            Il Digital Profit è un servizio riservato esclusivamente agli utenti certificati
+                            (Autentica account).<br>
+                            Riconosce agli utenti il valore generato dell'economia digitale certificata Genuiny
+                        </p>
+                        <div style="white-space: nowrap; display: inline;">(1 GData = 1 Euro)</div> all'interno di
+                        un sistema riservato, sicuro e trasparente.<br><br>
+
+                        <b style="font-size: 1.2em">Come funziona?</b><br>
+                        Eroga agli utenti beneficiari i Premi Autentica e Premio Rendita:<br>
+                        <ul style="margin-bottom: 0;">
+                            <li>il Premio Autentica viene accreditato ogni volta che certifichi un utente</li>
+                            <li>Il Premio Rendita viene accreditato ogni volta che le tue filiere digitali generano
+                                traffico</li>
+                            <li>Patents copyrights.<br>
+                                L'innovativa tecnologia etica Genuiny trasforma la presenza e il traffico digitale
+                                degli utenti in valore economico.<br>
+                                Il Digital Profit è un algoritmo (G=I02), un brevetto esclusivo Genuiny coperto da
+                                copyright.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+
+
+    <footer>
+    </footer>
+
+    <!----- BOOTSTRAP ------->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+        integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+        crossorigin="anonymous"></script>
+
+    <!--navbar-->
+    <script class="navbar-link" type="text/javascript" src="script/navbar.js"></script>
+
+
+    <script type="text/javascript" src="script/script.js"></script>
+</body>
+
+</html>
