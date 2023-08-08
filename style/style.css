@@ -1819,82 +1819,171 @@ img.map{
 }
 
 
-section.card-story .outer_container {
+.outer_container {
   width: 100%; 
   overflow: hidden;
   position: relative;
   margin-top: 2rem
 }
-section.card-story .outer_container .flex_container_steps .scroll{
+
+.outer_container .flex_container_steps {
+  justify-content: start;
+  margin: 0 calc(2rem + 10px) ;
+  overflow-x: auto;
+  display: flex;
+}
+
+
+.outer_container .flex_container_steps .scroll{
+  display: none;
   height: 4rem; /* margin of parent needs to be /2 of the scroll btn width to place it at the margin|padding line*/
   aspect-ratio: 1;
-  background: #09435E60;
+  background: #09435E;
+  opacity: 0.5;
   position: absolute;
   top: calc(50% - 1.5rem);
   border-radius: 99px;
-
-  background-image: url(../images/icons/arrow.svg);
-  background-size: 1.2rem;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-section.card-story .outer_container .scroll:hover{
-  background: #09435edb;
   
   background-image: url(../images/icons/arrow.svg);
   background-size: 1.2rem;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: calc(50% + 2px) center;
 }
-section.card-story .outer_container .flex_container_steps .scroll-left{
-  left: 0;
+@media (min-width: 1024px){
+  .outer_container .flex_container_steps .scroll{
+    display: block;
+  }
+}
+
+.outer_container .scroll:hover{
+  opacity: 0.8;
+  box-shadow:  0 0 10px 0 #4b4b4b;
+}
+.outer_container .flex_container_steps .scroll-left{
+  left: calc(0rem + 10px);
   transform: rotate(180deg)
 }
-section.card-story .outer_container .flex_container_steps .scroll-right{
-  right: 0rem;
+.outer_container .flex_container_steps .scroll-right{
+  right: calc(0rem + 10px);
 }
 
 
-section.card-story .outer_container .flex_container_steps {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  margin: 0 2rem ;
-  gap: 2rem;
-  padding: 2rem 2rem;
-}
-section.card-story .outer_container .flex_container_steps::-webkit-scrollbar {
+.outer_container .flex_container_steps::-webkit-scrollbar {
   height: 0;
 }
 
-section.card-story .outer_container .flex_container_steps .step{
+
+.outer_container .flex_container_steps .steps_container{
+  /* Used to allow for justify-content: center; --> fewer elements will be placed ad the center 
+  &&
+  the left element will be the first */  
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2rem;
+  width: fit-content;
+  padding: 2rem 2rem;
+  margin: auto;
+}
+
+
+.outer_container .flex_container_steps .steps_container .step{
+  background-color: #f0f0f0;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 8px -4px 5px 0px #00000026;
+
+  /* width is set this way to allow grandchild element to relate to grandparent element via page width */
+  /* It grows being 20% as grandparent grows, and it stops when it stops */
+  width: clamp(150px, calc((1.36vw/2) * 20), calc(1360px/6));
+  aspect-ratio: 1;
+}
+
+
+
+.outer_container .flex_container_steps .steps_container .step div.image-background{
+  background-image: url(../images/palceholder.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 60%;
+}
+
+.outer_container .flex_container_steps .steps_container .step div.step_text{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  overflow-y: auto;
+  gap: 1rem;
+  height: 40%;
+  padding-right: .5rem;
+}
+.outer_container .flex_container_steps .steps_container .step div.step_text p{
+  font-size: 1.2rem;
+  max-height: 100px;
+  overflow-y: auto;
+  padding: 1rem .5rem 1rem 1rem;
+}
+/* to set the width of the track */
+.outer_container .flex_container_steps .steps_container .step div.step_text ::-webkit-scrollbar {
+  width: 8px;
+}
+/* the track in which the pointer scrolls */
+.outer_container .flex_container_steps .steps_container .step div.step_text ::-webkit-scrollbar-button {
+  /* background: #dedede; */
+  border-radius: 5px;
+}
+.outer_container .flex_container_steps .steps_container .step div.step_text ::-webkit-scrollbar-track-piece {
+  background: #ccc;
+  border-radius: 5px;
+}
+.outer_container .flex_container_steps .steps_container .step div.step_text ::-webkit-scrollbar-thumb {
+  background: #989898;
+  border-radius: 5px;
+}​
+.outer_container .flex_container_steps .steps_container .step div.step_text ::-webkit-scrollbar-thumb:hover {
+  background: #09435e;
+}
+
+
+
+
+.outer_container .flex_container_steps .steps_container .tab{
   min-width: 180px;
   min-height: 60px;
+  height: 10rem;
   background-color: #f0f0f0;
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 8px -4px 5px 0px #00000026;
 }
 
-section.card-story .outer_container .flex_container_steps .step div.step_text{
-  display: flex;
-  justify-content: space-between;
-}
-section.card-story .outer_container .flex_container_steps .step div.step_text p{
-  font-size: 1.2rem;
+.outer_container .flex_container_steps .steps_container .tab .tab_content{
   padding: 1rem;
-  max-height: 100px;
-  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+  background-image: url(../images/icons/icon-bg.svg);
+  background-repeat: no-repeat;
+  background-position: 170% -70%;
+  background-size: 70%;
 }
 
-section.card-story .outer_container .flex_container_steps .step div.image-background{
-  background-image: url(../images/palceholder.jpg);
+
+.outer_container .flex_container_steps .steps_container .tab .tab_content div.icon{
+  height: 60%;
+  
+  background-image: url(../images/icons/icon.svg);
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  min-height: 80px;
 }
+
+
+
+
+
+
+
 
 
 span.no-wrap{
