@@ -2,7 +2,6 @@ function copy_hash(htmlElement){
   if(!htmlElement){
     return
   }
-  
   let elementText = htmlElement.innerText;
 
   let tempInput = document.createElement('input');
@@ -13,61 +12,69 @@ function copy_hash(htmlElement){
   tempInput.parentNode.removeChild(tempInput);
   alert("Hash copiato!")
 }
-
 document.querySelector('#copy-hash').onclick = function(){
   copy_hash(document.querySelector('#hash'))
 }
 
+const leftArrow = document.querySelectorAll('.scroll-left');
+const rightArrow = document.querySelectorAll('.scroll-right');
+const flex_container_steps = document.querySelectorAll('.flex_container_steps')
+const margin = 5
 
+function updateScrollArrows(DOM_object) {
+  const margin = 3;
+  var container_width = DOM_object.clientWidth;
+  var scroll_amount = DOM_object.scrollLeft;
+  var overflowed_width = DOM_object.querySelector('.steps_container').clientWidth;
+  var scroll_percentage = (scroll_amount / (overflowed_width - container_width)) * 100;
+  var scroll_necessity = overflowed_width > (container_width +  2 * margin)
+  var scroll_left = DOM_object.querySelector('.scroll-left')
+  var scroll_right = DOM_object.querySelector('.scroll-right')
+  
+  if (scroll_necessity){
+    
+    if (scroll_percentage < 0 + margin) {
+      scroll_left.classList.remove('scroll_show');
+      scroll_right.classList.add('scroll_show');
+    }
+    else if (scroll_percentage > 100 - margin) {
+      scroll_right.classList.remove('scroll_show');
+      scroll_left.classList.add('scroll_show');
+    }
+    else {
+      scroll_left.classList.add('scroll_show');
+      scroll_right.classList.add('scroll_show');
+    }
+  }
+  
+};
+  
 document.addEventListener('DOMContentLoaded', function() {
-  var leftArrow = document.querySelectorAll('.scroll-left');
-  var rightArrow = document.querySelectorAll('.scroll-right');
-
-  leftArrow.forEach(left_arrow => {
-    console.log(left_arrow.parentElement)
-    left_arrow.addEventListener('click', function() {
-      var contentContainer = this.parentElement
-      var scrollAmount = contentContainer.clientWidth / 2;
-      contentContainer.scrollTo({
-        left: contentContainer.scrollLeft - scrollAmount,
-        behavior: 'smooth'
-      });
-    });
+  flex_container_steps.forEach(f_container_steps => {
+    updateScrollArrows(f_container_steps)
+    f_container_steps.addEventListener('scroll', function(){
+      updateScrollArrows(f_container_steps)});
   });
-  rightArrow.forEach(right_arrow => {
-    console.log(right_arrow.parentElement)
-    right_arrow.addEventListener('click', function() {
-      var contentContainer = this.parentElement
-      var scrollAmount = contentContainer.clientWidth / 2;
-      contentContainer.scrollTo({
-        left: contentContainer.scrollLeft + scrollAmount,
-        behavior: 'smooth'
-      });
-    });
-  });
-
 });
 
-// document.addEventListener('DOMContentLoaded', function() {
-//   var contentContainer = document.querySelector('.flex_container_steps');
-//   var leftArrow = document.querySelector('.scroll-left');
-//   var rightArrow = document.querySelector('.scroll-right');
 
-//   console.log(contentContainer.clientWidth)
-  
-//   leftArrow.addEventListener('click', function() {
-//     var scrollAmount = contentContainer.clientWidth / 2; // Amount of scroll in pixls
-//     contentContainer.scrollTo({
-//       left: contentContainer.scrollLeft - scrollAmount,
-//       behavior: 'smooth'
-//     });
-//   });
-  
-//   rightArrow.addEventListener('click', function() {
-//     var scrollAmount = contentContainer.clientWidth / 2; // Amount of scroll in pixls
-//     contentContainer.scrollTo({
-//       left: contentContainer.scrollLeft + scrollAmount,
-//       behavior: 'smooth'
-//     });
-//   });
-// });
+leftArrow.forEach(left_arrow => {
+  left_arrow.addEventListener('click', function() {
+    var contentContainer = this.parentElement
+    var scrollAmount = contentContainer.clientWidth / 2;
+    contentContainer.scrollTo({
+      left: contentContainer.scrollLeft - scrollAmount,
+      behavior: 'smooth'
+    });
+  });
+});
+rightArrow.forEach(right_arrow => {
+  right_arrow.addEventListener('click', function() {
+    var contentContainer = this.parentElement
+    var scrollAmount = contentContainer.clientWidth / 2;
+    contentContainer.scrollTo({
+      left: contentContainer.scrollLeft + scrollAmount,
+      behavior: 'smooth'
+    });
+  });
+});
