@@ -2869,18 +2869,32 @@ img.map {
 
 
 
-div.fact-info-container {
+div.fact-info-container{
   width: 100%;
   height: 100vh;
-  /* background-color: rgba(147, 14, 14, 0.395); */
   background-color: rgba(255, 255, 255);
   overflow-y: auto;
   position: fixed;
   top: 0;
   padding-top: 62px;
-  right: auto;
+  right: 100%;
   margin: auto;
+  
+  transition: right .3s;
+  transition-timing-function: ease-out;
+  /* display: none */
 }
+div.fact-info-container .show_from_left{
+  right: 0%;
+  position: relative;
+}
+@media (min-width: calc(2000px + 25.2px)){
+  div.fact-info-container{
+    position: relative;
+    right: 100%;
+  }
+}
+
 div.fact-info-container .full-page{
   background: transparent;
   width: 90%;
@@ -2901,7 +2915,7 @@ div.fact-info-container .full-page .title-info:first-of-type{
   margin-top: 4rem;
 }
 
-div.fact-info-container button#back-btn{
+div.fact-info-container button.back_btn{
   position: fixed;
   width: 5rem;
   aspect-ratio: 1;
@@ -2910,29 +2924,39 @@ div.fact-info-container button#back-btn{
   border: none;
   background-image: url(../images/icons/Arrow.svg);
   z-index: 2;
-  right: .5rem;
   bottom: 2rem;
+  right: calc(100% + .5rem);
+  transition: right .3s, left .3s;
 
   background-position: 60%;
   background-size: 32%;
   background-repeat: no-repeat;
   transform: translate(-50%, -50%) rotate(180deg);
 }
+div.fact-info-container button.show_from_left{
+  right: .5rem;
+}
 
 @media (min-width: 1024px){
-  div.fact-info-container button#back-btn{
-    left: 5%;
+  div.fact-info-container button.back_btn{
+    right: auto;
+    left: calc(-100% + 5%);
     top: 120px;
     width: 6rem;
-    right: auto;
     bottom: auto;
   }
+  div.fact-info-container button.show_from_left{
+    right: auto;
+    left: 5%
+  }
 }
+
 @media (min-width: calc(2000px + 25.2px)){
-  div.fact-info-container button#back-btn{
+  div.fact-info-container button.back_btn{
     left: calc(50% - 2000px*0.35 - 2000px*0.04);
   }
 }
+
 
 
 /* body{

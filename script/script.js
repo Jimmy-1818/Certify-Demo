@@ -16,6 +16,12 @@ document.querySelector('#copy-hash').onclick = function(){
   copy_hash(document.querySelector('#hash'))
 }
 
+
+
+
+
+
+
 const leftArrow = document.querySelectorAll('.scroll-left');
 const rightArrow = document.querySelectorAll('.scroll-right');
 const flex_container_steps = document.querySelectorAll('.flex_container_steps')
@@ -46,15 +52,25 @@ function updateScrollArrows(DOM_object) {
       scroll_right.classList.add('scroll_show');
     }
   }
+  if ((!scroll_necessity) && (scroll_left.classList.contains('scroll_show') || scroll_right.classList.contains('scroll_show'))){
+    scroll_right.classList.remove('scroll_show');
+    scroll_left.classList.remove('scroll_show');
+  }
   
 };
-  
+
+// throw the function once: LOADED, SCROLL slideshow, RESIZE vindow
 document.addEventListener('DOMContentLoaded', function() {
+  window.addEventListener("resize", function(){
+    flex_container_steps.forEach(f_container_steps =>{
+      updateScrollArrows(f_container_steps)
+    });
+  });
   flex_container_steps.forEach(f_container_steps => {
     updateScrollArrows(f_container_steps)
     f_container_steps.addEventListener('scroll', function(){
       updateScrollArrows(f_container_steps)});
-  });
+    });
 });
 
 
@@ -78,3 +94,16 @@ rightArrow.forEach(right_arrow => {
     });
   });
 });
+
+function open_info(){
+  fact_info_container.classList.add('show_from_left')
+  back_btn_object.classList.add('show_from_left')
+}
+
+const fact_info_container = document.querySelector('.fact-info-container')
+const back_btn_object = document.querySelector('#back_btn')
+function info_back_btn(){
+  fact_info_container.classList.remove('show_from_left')
+  back_btn_object.classList.remove('show_from_left')
+}
+
