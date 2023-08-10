@@ -95,10 +95,18 @@ rightArrow.forEach(right_arrow => {
   });
 });
 
-function open_info(){
+function open_info(element_aimed){
   fact_info_container.classList.add('show_from_left')
   back_btn_object.classList.add('show_from_left')
-}
+  var aimed_id = element_aimed.id
+  var aimed_scroll_amount = document.querySelector('.full-page').querySelector(`.${aimed_id}`).offsetTop
+  setTimeout(function() {
+    fact_info_container.scrollTo({
+        top: aimed_scroll_amount - 102,
+        behavior: 'smooth'
+      })
+  }, 300);
+};
 
 const fact_info_container = document.querySelector('.fact-info-container')
 const back_btn_object = document.querySelector('#back_btn')
@@ -106,4 +114,3 @@ function info_back_btn(){
   fact_info_container.classList.remove('show_from_left')
   back_btn_object.classList.remove('show_from_left')
 }
-

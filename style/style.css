@@ -2812,6 +2812,17 @@ img.map {
   overflow: hidden;
   box-shadow: 8px -4px 5px 0px #00000026;
 }
+.outer_container .flex_container_steps .steps_container .tab h5{
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 250px;
+}
+
+
+.outer_container .flex_container_steps .steps_container .tab:hover {
+  cursor: pointer;
+}
 
 .outer_container .flex_container_steps .steps_container .tab .tab_content {
   padding: 1rem;
@@ -2822,8 +2833,8 @@ img.map {
 
   background-image: url(../images/icons/icon-bg.svg);
   background-repeat: no-repeat;
-  background-position: 113% -150%;
-  background-size: 50%;
+  background-position: calc(100% + 2rem) calc(100% - -4rem);
+  background-size: 10rem;
 }
 
 
@@ -2832,7 +2843,7 @@ img.map {
 
   background-image: url(../images/icons/icon.svg);
   background-repeat: no-repeat;
-  background-size: 22%;
+  background-size: 3.5rem;
 }
 
 .outer_container .flex_container_steps .steps_container .tab:nth-of-type(1) .tab_content {
@@ -2882,37 +2893,45 @@ div.fact-info-container{
   
   transition: right .3s;
   transition-timing-function: ease-out;
-  /* display: none */
 }
-div.fact-info-container .show_from_left{
+div.show_from_left{
   right: 0%;
-  position: relative;
 }
 @media (min-width: calc(2000px + 25.2px)){
-  div.fact-info-container{
-    position: relative;
-    right: 100%;
+  div.show_from_left{
+    position: fixed;
+    right: calc(50% - (2000px + 25.2px)/2);
   }
 }
 
 div.fact-info-container .full-page{
   background: transparent;
-  width: 90%;
+  width: 100%;
   padding-right: 10%;
+  padding-left: 10%;
+  min-height: calc(100vh - 101px);
 }
 @media (min-width: 1024px){
   div.fact-info-container .full-page{
-    width: 70%;
-    padding-right: 0;
+    width: 100%;
+    padding-right: 15%;
+    padding-left: 15%;
+    padding-top: 4rem;
   }
 }
-div.fact-info-container .full-page .title-info{
+div.fact-info-container .full-page .paragraph .title-info{
   margin: 5rem 0 1rem 0;
   font-weight: bold;
   font-size: 1.2em;
 }
-div.fact-info-container .full-page .title-info:first-of-type{
-  margin-top: 4rem;
+div.fact-info-container .full-page .paragraph .title-info:first-of-type{
+  margin-top: 6rem;
+}
+div.fact-info-container .full-page div.paragraph{
+  margin-bottom: 4rem;
+}
+div.fact-info-container .full-page div.paragraph:last-of-type{
+  margin-bottom: 7rem;
 }
 
 div.fact-info-container button.back_btn{
@@ -2953,6 +2972,9 @@ div.fact-info-container button.show_from_left{
 
 @media (min-width: calc(2000px + 25.2px)){
   div.fact-info-container button.back_btn{
+    left: calc(100 + 50% - 2000px*0.35 - 2000px*0.04);
+  }
+  div.fact-info-container button.show_from_left{
     left: calc(50% - 2000px*0.35 - 2000px*0.04);
   }
 }

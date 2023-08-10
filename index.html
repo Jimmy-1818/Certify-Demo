@@ -347,25 +347,25 @@
                     <div class="scroll scroll-right"></div>
                     <div class="scroll scroll-left"></div>
                     <div class="steps_container">
-                        <div class="tab">
+                        <div id="place" onclick="open_info(this)" class="tab">
                             <div class="tab_content">
                                 <div class="icon"></div>
                                 <h5>Caratteristiche</h5>
                             </div>
                         </div>
-                        <div class="tab">
+                        <div id="packaging" onclick="open_info(this)" class="tab">
                             <div class="tab_content">
                                 <div class="icon"></div>
                                 <h5>Imballaggio</h5>
                             </div>
                         </div>
-                        <div class="tab">
+                        <div id="transport" onclick="open_info(this)" class="tab">
                             <div class="tab_content">
                                 <div class="icon"></div>
                                 <h5>Trasporto</h5>
                             </div>
                         </div>
-                        <div class="tab">
+                        <div id="print" onclick="open_info(this)" class="tab">
                             <div class="tab_content">
                                 <div class="icon"></div>
                                 <h5>Stampa</h5>
@@ -416,31 +416,39 @@
             </iframe>
         </section>
 
-        <div class="fact-info-container main-container show_from_left">
-            <button onclick="info_back_btn();" id="back_btn" class="back_btn show_from_left"></button>
-            <div class="full-page card">
-                <h2 id="place" class="title-info">Luogo di coltura</h2>
-                <p>
-                    Piana di Sibari. Questa pianura costiera, situata nella provincia di Cosenza, è conosciuta per la sua fertilità e per la presenza di coltivazioni di cereali, tra cui avena, frumento e segale. La Piana di Sibari offre anche un clima temperato e favorevole alla coltivazione di frutti come le bacche, rendendola una località adatta per la produzione di uno snack a base di cereali e frutti essiccati.
-                </p>
-                <h2 id="transport" class="title-info">Trasporto</h2>
-                <p>
-                    Il trasporto del prodotto "EcoBerry Crunchies" è un aspetto cruciale nella sua catena di distribuzione. Per garantire l'integrità e la freschezza degli ingredienti, ci impegniamo a utilizzare soluzioni di trasporto sicure e sostenibili. Collaboriamo con partner logistici affidabili che adottano pratiche eco-friendly e mirate a ridurre l'impatto ambientale. Durante il trasporto, prestiamo particolare attenzione alla temperatura e all'umidità per mantenere la qualità del prodotto inalterata.
-                    <br><br>
-                    Inoltre, cerchiamo di ottimizzare le rotte di consegna per ridurre al minimo il consumo di carburante e le emissioni di gas serra, contribuendo così alla riduzione dell'impronta di carbonio del nostro prodotto. La nostra missione è garantire che "EcoBerry Crunchies" arrivi nelle mani dei consumatori in modo efficiente, sicuro e rispettoso dell'ambiente.
-                </p>
-                <h2 id="print" class="title-info">Stampa</h2>
-                <p>
-                    La stampa è una fase fondamentale nel processo di confezionamento del prodotto "EcoBerry Crunchies". Perché il nostro impegno per la sostenibilità sia completo, ci avvaliamo di soluzioni di stampa ecologiche. Utilizziamo inchiostri a base d'acqua privi di sostanze chimiche nocive e carta proveniente da fonti certificate a gestione sostenibile delle foreste. La nostra etichettatura e i materiali informativi sono progettati in modo accattivante e informativo, utilizzando colori vivaci e design eco-friendly.
-                    <br><br>
-                    Inoltre, ottimizziamo l'uso delle risorse durante il processo di stampa per ridurre gli sprechi e il consumo di energia. Con la nostra attenzione alla stampa sostenibile, miriamo a condividere i valori di eco-consapevolezza con i consumatori, incoraggiando un approccio responsabile verso il nostro ambiente.
-                </p>
-                <h2 id="packaging" class="title-info">Imballaggio</h2>
-                <p>
-                    Imballaggio Esterno: cartone certificato FSC (Forest Stewardship Council) trattato con rivestimenti compostabili a base di materiali naturali. Questa combinazione consentirebbe di mantenere le proprietà di resistenza e protezione del cartone mentre lo rende biodegradabile e adatto al compostaggio.
-                    <br><br>
-                    Imballaggio interno: Mat-Bi, un materiale bioplastico ottenuto da fonti rinnovabili, come amido di mais o altre biomasse. Questo materiale è biodegradabile e compostabile, e può essere utilizzato per confezionare prodotti alimentari in modo eco-friendly.
-                </p>
+        <div class="fact-info-container main-container">
+            <button onclick="info_back_btn();" id="back_btn" class="back_btn"></button>
+            <div class="full-page">
+                <div class="paragraph">
+                    <h2 class="title-info place">Luogo di coltura</h2>
+                    <p>
+                        Piana di Sibari. Questa pianura costiera, situata nella provincia di Cosenza, è conosciuta per la sua fertilità e per la presenza di coltivazioni di cereali, tra cui avena, frumento e segale. La Piana di Sibari offre anche un clima temperato e favorevole alla coltivazione di frutti come le bacche, rendendola una località adatta per la produzione di uno snack a base di cereali e frutti essiccati.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <h2 class="title-info packaging">Imballaggio</h2>
+                    <p>
+                        Imballaggio Esterno: cartone certificato FSC (Forest Stewardship Council) trattato con rivestimenti compostabili a base di materiali naturali. Questa combinazione consentirebbe di mantenere le proprietà di resistenza e protezione del cartone mentre lo rende biodegradabile e adatto al compostaggio.
+                        <br><br>
+                        Imballaggio interno: Mat-Bi, un materiale bioplastico ottenuto da fonti rinnovabili, come amido di mais o altre biomasse. Questo materiale è biodegradabile e compostabile, e può essere utilizzato per confezionare prodotti alimentari in modo eco-friendly.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <h2 class="title-info transport">Trasporto</h2>
+                    <p>
+                        Il trasporto del prodotto "EcoBerry Crunchies" è un aspetto cruciale nella sua catena di distribuzione. Per garantire l'integrità e la freschezza degli ingredienti, ci impegniamo a utilizzare soluzioni di trasporto sicure e sostenibili. Collaboriamo con partner logistici affidabili che adottano pratiche eco-friendly e mirate a ridurre l'impatto ambientale. Durante il trasporto, prestiamo particolare attenzione alla temperatura e all'umidità per mantenere la qualità del prodotto inalterata.
+                        <br><br>
+                        Inoltre, cerchiamo di ottimizzare le rotte di consegna per ridurre al minimo il consumo di carburante e le emissioni di gas serra, contribuendo così alla riduzione dell'impronta di carbonio del nostro prodotto. La nostra missione è garantire che "EcoBerry Crunchies" arrivi nelle mani dei consumatori in modo efficiente, sicuro e rispettoso dell'ambiente.
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <h2 class="title-info print">Stampa</h2>
+                    <p>
+                        La stampa è una fase fondamentale nel processo di confezionamento del prodotto "EcoBerry Crunchies". Perché il nostro impegno per la sostenibilità sia completo, ci avvaliamo di soluzioni di stampa ecologiche. Utilizziamo inchiostri a base d'acqua privi di sostanze chimiche nocive e carta proveniente da fonti certificate a gestione sostenibile delle foreste. La nostra etichettatura e i materiali informativi sono progettati in modo accattivante e informativo, utilizzando colori vivaci e design eco-friendly.
+                        <br><br>
+                        Inoltre, ottimizziamo l'uso delle risorse durante il processo di stampa per ridurre gli sprechi e il consumo di energia. Con la nostra attenzione alla stampa sostenibile, miriamo a condividere i valori di eco-consapevolezza con i consumatori, incoraggiando un approccio responsabile verso il nostro ambiente.
+                    </p>
+                </div>
             </div>
         </div>
 
