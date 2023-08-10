@@ -2680,6 +2680,7 @@ img.map {
 
 
 .outer_container .flex_container_steps .scroll {
+  display: none;
   height: 4rem;
   /* margin of parent needs to be /2 of the scroll btn width to place it at the margin|padding line*/
   aspect-ratio: 1;
@@ -2690,6 +2691,7 @@ img.map {
   transform: translate(0, -50%);
   border-radius: 99px;
   transition: opacity .17s;
+  transition-timing-function: ease-in-out;
 
   background-image: url(../images/icons/arrow.svg);
   background-size: 35%;
@@ -2701,6 +2703,7 @@ img.map {
 @media (min-width: 1024px) {
   .outer_container .flex_container_steps .scroll_show {
     opacity: 0.5;
+    display: block;
   }
 }
 
