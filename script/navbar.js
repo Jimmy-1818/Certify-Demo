@@ -11,6 +11,21 @@ const indicators = document.getElementsByClassName("carousel-indicators")
 
 const nearest_threshold = 70
 
+const logo_image = document.getElementById('logo_svg_image')
+
+
+
+function change_logo_dark(){
+  if (logo_image.getAttribute('xlink:href') != 'images/logo_certify_on_light.svg'){
+    logo_image.setAttribute('xlink:href', 'images/logo_certify_on_light.svg')
+  }
+}
+
+function change_logo_light(){
+  if (logo_image.getAttribute('xlink:href') != 'images/logo_certify_on_dark.svg'){
+    logo_image.setAttribute('xlink:href', 'images/logo_certify_on_dark.svg')
+  }
+}
 
 
 function hamburger_click(){
@@ -19,6 +34,7 @@ function hamburger_click(){
   //CLOSING
   if (hamburger[0].classList.contains("show")){
     if (window.scrollY == 0){
+      change_logo_dark()
       desktop_nav.classList.remove("desktop_nav_shadow")
       desktop_nav.classList.remove("desktop_nav_dark")
     }
@@ -28,6 +44,7 @@ function hamburger_click(){
   }
   //OPENING
   else{
+    change_logo_light()
     desktop_nav.classList.remove("desktop_nav_shadow")
     desktop_nav.classList.add("desktop_nav_dark")
   }
@@ -266,10 +283,14 @@ on_scroll()
 
 
 
+
+
+
 function navbar_width_scroll_control(){
   desktop_nav = document.getElementsByClassName("desktop-nav")[0]
   //ON TOP
   if (window.scrollY == 0){
+    change_logo_dark()
     if (hamburger[0].classList.contains("show")){
       desktop_nav.classList.remove("desktop_nav_shadow")
     }
@@ -282,6 +303,7 @@ function navbar_width_scroll_control(){
     }
   //SCROLLED
   }else{
+    change_logo_light()
     desktop_nav.style.height = "62px"
     if (hamburger[0].classList.contains("show")){
       desktop_nav.classList.remove("desktop_nav_shadow")

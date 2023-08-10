@@ -27,8 +27,11 @@
       height: 100%; }
       .desktop-nav .container-navbar div.logo a {
         height: 100%; }
-        .desktop-nav .container-navbar div.logo a img {
-          height: 100%; }
+        .desktop-nav .container-navbar div.logo a svg {
+          height: 100%;
+        }
+          .desktop-nav .container-navbar div.logo a svg image {
+            width: auto}
 
 .hamburger {
   display: block;
@@ -111,8 +114,6 @@
   background: #0abab5; }
   .desktop_nav_dark a.page-link {
     color: white; }
-    .desktop_nav_dark a.page-link img {
-      content: url("../images/svg-logo-ethical-w.png"); }
   .desktop_nav_dark button.hamburger span {
     background-color: white; }
 
