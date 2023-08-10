@@ -107,7 +107,7 @@ function open_info(element_aimed){
   var aimed_scroll_amount = document.querySelector('.full-page').querySelector(`.${aimed_id}`).offsetTop
   setTimeout(function() {
     fact_info_container.scrollTo({
-        top: aimed_scroll_amount - 102,
+        top: aimed_scroll_amount - 122,
         behavior: 'smooth'
       })
   }, 300);
@@ -121,5 +121,5 @@ function info_back_btn(){
 
 
 function open_steps(){
-  
+
 }

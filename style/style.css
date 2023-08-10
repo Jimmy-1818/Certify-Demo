@@ -2589,11 +2589,13 @@ header.choice {
 
 
 .card {
-  width: 90%;
+  width: 100%;
   max-width: 100%;
   overflow-x: hidden;
   margin: auto auto 10rem auto;
   --bs-card-border-width: none;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 @media (min-width: 1024px) {
@@ -2612,9 +2614,16 @@ section.card h1 {
 
 
 .nutritional_table_container {
-  max-width: 100%;
   overflow-x: auto;
   margin-bottom: 4rem;
+  width: 105%;
+  padding-right: 5%;
+}
+@media (min-width: 1024px){
+  .nutritional_table_container{
+    padding-right: 0;
+    width: 100%;
+  }
 }
 
 .nutritional_table {
@@ -2665,11 +2674,22 @@ img.map {
 
 
 .outer_container {
-  width: 100%;
   overflow: hidden;
   position: relative;
-  margin-top: 2rem
+  margin-top: 2rem;
+  margin-left: -14%;
+  margin-right: -14%;
+  width: 128%;
 }
+@media (min-width: 1024px){
+  .outer_container{
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+
 
 .outer_container .flex_container_steps {
   justify-content: start;
@@ -2919,7 +2939,6 @@ div.fact-info-container .full-page{
     width: 100%;
     padding-right: 15%;
     padding-left: 15%;
-    padding-top: 4rem;
   }
 }
 div.fact-info-container .full-page .paragraph .title-info{
