@@ -2963,7 +2963,7 @@ div.fact-info-container button.back_btn{
   border-radius: 100%;
   background: #09435e;
   border: none;
-  background-image: url(../images/icons/Arrow.svg);
+  /* background-image: url(../images/icons/Arrow.svg); */
   z-index: 2;
   bottom: 2rem;
   right: calc(100% + .5rem);
@@ -2972,7 +2972,8 @@ div.fact-info-container button.back_btn{
   background-position: 60%;
   background-size: 32%;
   background-repeat: no-repeat;
-  transform: translate(-50%, -50%) rotate(180deg);
+  /* transform: translate(-50%, -50%) rotate(180deg); */
+  transform: translate(-50%, -50%);
 }
 div.fact-info-container button.show_from_left{
   right: .5rem;
@@ -3001,7 +3002,13 @@ div.fact-info-container button.show_from_left{
   }
 }
 
-
+div.fact-info-container button.back_btn img{
+  position: absolute;
+  height: 60%;
+  transform: translate(-50%, -50%) rotate(180deg);
+  left: 46%;
+  top: 50%;
+}
 
 /* body{
   overflow: hidden;
