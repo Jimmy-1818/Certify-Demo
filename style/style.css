@@ -2658,7 +2658,7 @@ section.card h1 {
 }
 
 .image_container_certifications .item {
-  width: clamp(70px, 30%, 170px)
+  width: clamp(70px, 23%, 130px);
 }
 
 
@@ -2677,9 +2677,9 @@ img.map {
   overflow: hidden;
   position: relative;
   margin-top: 2rem;
-  margin-left: -14%;
-  margin-right: -14%;
-  width: 128%;
+  margin-left: -54px;
+  margin-right: -54px;
+  width: calc(100% + 108px);
 }
 @media (min-width: 1024px){
   .outer_container{
@@ -3018,13 +3018,30 @@ div.steps-info-container .show_version {
   display: block
 }
 
-div.steps-info-container .step_version img{
-  object-fit: cover;
-  width: 100%;
-  height: 400px;
+div.steps-info-container .step_version div{
+  height: 300px;
+  width: 125%;
+  margin: 0px -12.6%;
+  text-align: center;
+}
+@media (min-width: 1024px){
+  div.steps-info-container .step_version div{
+    width: 100%;
+    margin: 0
+  }
+  div.steps-info-container .step_version div img{
+    max-width: 500px;
+  }
 }
 
-div.step-info-container .full-page .paragraph .title-info:first-of-type{
+
+div.steps-info-container .step_version div img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+div.steps-info-container .full-page .paragraph .title-info:first-of-type{
   margin-top: 4rem
 }
 

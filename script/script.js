@@ -120,13 +120,18 @@ const steps_info_container = document.querySelector('.steps-info-container')
 const back_btn_object_steps = document.querySelector('#back_btn2')
 const step_version = steps_info_container.querySelectorAll('.step_version')
 
+function info_back_btn(){
+  fact_info_container.classList.remove('show_from_left')
+  back_btn_object.classList.remove('show_from_left')
+}
 
 function info_back_btn_2(){
   steps_info_container.classList.remove('show_from_left')
   back_btn_object_steps.classList.remove('show_from_left')
-  step_version.forEach(step_version => {
-    step_version.classList.remove('show_version')
-  })
+  setTimeout(function(){
+    step_version.forEach(step_version => {
+      step_version.classList.remove('show_version')
+    })}, 300)
 };
 
 
@@ -134,6 +139,5 @@ function open_steps(element_aimed){
   steps_info_container.classList.add('show_from_left')
   back_btn_object_steps.classList.add('show_from_left')
   var aimed_id = element_aimed.id
-  console.log(aimed_id)
   step_version[aimed_id-1].classList.add('show_version')
 };

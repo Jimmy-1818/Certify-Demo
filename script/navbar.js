@@ -16,7 +16,7 @@ const logo_image = document.getElementById('logo_svg_image')
 
 
 function change_logo_dark(){
-  if (logo_image.getAttribute('xlink:href') != 'images/logo_certify_on_light.svg'){
+  if (logo_image.getAttribute('xlink:href') != 'images/logo_certify_on_light.svg' && !menu_mobile.classList.contains('show-mobile')){
     logo_image.setAttribute('xlink:href', 'images/logo_certify_on_light.svg')
   }
 }
@@ -32,9 +32,10 @@ function hamburger_click(){
   var desktop_nav = document.getElementsByClassName("desktop-nav")[0]
   
   //CLOSING
-  if (hamburger[0].classList.contains("show")){
+  var in_pop_up = steps_info_container.classList.contains('show_from_left') || fact_info_container.classList.contains('show_from_left') 
+  if (hamburger[0].classList.contains("show") && !in_pop_up){
+    navbar_width_scroll_control()
     if (window.scrollY == 0){
-      change_logo_dark()
       desktop_nav.classList.remove("desktop_nav_shadow")
       desktop_nav.classList.remove("desktop_nav_dark")
     }
@@ -64,7 +65,9 @@ function hamburger_click(){
 };
 
 
-
+// aggiugni il back con indietro
+// e
+// metti l'overflow hidden sui tasti per open_step()+ l'altro e chiudi su back_btn_object()
 
 // Get a list of lists of titles
 var titles_text = []
@@ -94,8 +97,8 @@ function current_index(){
   return values_return
 };
 
-let lastSctollY = window.scrollY;
-window.addEventListener("scroll", on_scroll)
+var lastSctollY = window.scrollY;
+window.addEventListener("scroll", navbar_width_scroll_control)
 
 
 // Bottom h1 on button prev/next click (delayed)
@@ -279,7 +282,7 @@ function bottom_btn_regulation(){
 
 
 //for reloads with page scroll != 0
-on_scroll()
+navbar_width_scroll_control()
 
 
 
@@ -287,60 +290,48 @@ on_scroll()
 
 
 function navbar_width_scroll_control(){
+  const steps_info_container = document.querySelector('.steps-info-container')
+  const fact_info_container = document.querySelector('.fact-info-container')
+  var in_pop_up = steps_info_container.classList.contains('show_from_left') || fact_info_container.classList.contains('show_from_left') 
   desktop_nav = document.getElementsByClassName("desktop-nav")[0]
+
   //ON TOP
-  if (window.scrollY == 0){
-    change_logo_dark()
+  if (window.scrollY == 0 && !in_pop_up){
+    setTimeout(() => {
+      change_logo_dark()
+    }, 100);
     if (hamburger[0].classList.contains("show")){
       desktop_nav.classList.remove("desktop_nav_shadow")
     }
     else{
       desktop_nav.classList.remove("desktop_nav_dark")
       desktop_nav.classList.remove("desktop_nav_shadow")
+      desktop_nav.classList.remove("navbar-hide")
     }
     if(window.innerWidth >= 1024){
       desktop_nav.style.height = "73px"
     }
-  //SCROLLED
-  }else{
+  }
+  //SCROLL 
+  else{      
     change_logo_light()
     desktop_nav.style.height = "62px"
-    if (hamburger[0].classList.contains("show")){
-      desktop_nav.classList.remove("desktop_nav_shadow")
+    //SCROLL IN BASSO
+    if ((lastSctollY < window.scrollY && !(menu_mobile.classList.contains("show-mobile")) && ($(window).width() < 1024)) && !in_pop_up) {
+      desktop_nav = document.getElementsByClassName("desktop-nav")[0]
+      desktop_nav.classList.add("navbar-hide")
     }
-    else{
+    else if (hamburger[0].classList.contains("show")){
+      desktop_nav.classList.remove("desktop_nav_shadow")
+      //SCROLL IN ALTO
+    }else{
       desktop_nav.classList.add("desktop_nav_dark")
       desktop_nav.classList.add("desktop_nav_shadow")
+      desktop_nav.classList.remove("navbar-hide")
     }
   }
+  lastSctollY = window.scrollY
 }
 
 /////////////// TO SHOW/HIDE BOTTOM BTN/NAVBAR //////////////
 
-function on_scroll(){
-  navbar_width_scroll_control()
-  if (carousel.length > 1){
-    end_page_carousel()
-  }
-
-  // Track position of nearest title in relation to top view
-  var current_i = current_index()[0]
-  var nearest_distance = current_index()[1]
-  var bottom_btn = document.getElementsByClassName("bottom-btn")[0]
-
-  // Hide/show when scrolling up/down navbar/bottom btn
-  if (window.scrollY == 0){
-    desktop_nav.classList.remove("navbar-hide")
-  }
-  else if ((lastSctollY < window.scrollY || nearest_distance < nearest_threshold) && !(menu_mobile.classList.contains("show-mobile")) && ($(window).width() < 1024)) {
-    desktop_nav = document.getElementsByClassName("desktop-nav")[0]
-    desktop_nav.classList.add("navbar-hide")
-  }else if (nearest_distance > nearest_threshold){
-    desktop_nav.classList.remove("navbar-hide")
-  }
-  lastSctollY = window.scrollY
-
-  //if (carousel.length > 0){
-  //  bottom_btn_regulation()
-  //}
-};
