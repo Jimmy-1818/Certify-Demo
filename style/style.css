@@ -2932,7 +2932,7 @@ div.fact-info-container .full-page{
   width: 100%;
   padding-right: 10%;
   padding-left: 10%;
-  min-height: calc(100vh - 101px);
+  min-height: calc(100vh - 125px);
 }
 @media (min-width: 1024px){
   div.fact-info-container .full-page{
@@ -3009,6 +3009,25 @@ div.fact-info-container button.back_btn img{
   left: 46%;
   top: 50%;
 }
+
+
+div.steps-info-container .step_version {
+  display: none
+}
+div.steps-info-container .show_version {
+  display: block
+}
+
+div.steps-info-container .step_version img{
+  object-fit: cover;
+  width: 100%;
+  height: 400px;
+}
+
+div.step-info-container .full-page .paragraph .title-info:first-of-type{
+  margin-top: 4rem
+}
+
 
 /* body{
   overflow: hidden;
