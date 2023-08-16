@@ -102,6 +102,10 @@ const back_btn_object = document.querySelector('#back_btn')
 function open_info(element_aimed){
   push_state()
   $(document.body).addClass('overflow-hidden');
+  change_logo_light()
+  desktop_nav.classList.remove("desktop_nav_shadow")
+  desktop_nav.classList.add("desktop_nav_dark")
+  desktop_nav.classList.remove("navbar-hide")
 
   fact_info_container.classList.add('show_from_left')
   back_btn_object.classList.add('show_from_left')
@@ -120,6 +124,10 @@ function open_info(element_aimed){
 function open_steps(element_aimed){
   push_state()
   $(document.body).addClass('overflow-hidden');
+  change_logo_light()
+  desktop_nav.classList.remove("desktop_nav_shadow")
+  desktop_nav.classList.add("desktop_nav_dark")
+  desktop_nav.classList.remove("navbar-hide")
 
   steps_info_container.classList.add('show_from_left')
   back_btn_object_steps.classList.add('show_from_left')
@@ -137,11 +145,14 @@ const step_version = steps_info_container.querySelectorAll('.step_version')
 function info_back_btn(){
   remove_show_from_left()
   history.back();
+  navbar_width_scroll_control() 
+  
 }
 
 function info_back_btn_2(){
   remove_show_from_left();
   history.back();
+  navbar_width_scroll_control() 
 };
 
 
@@ -160,6 +171,7 @@ function remove_show_from_left(){
 
 window.addEventListener("popstate", function(event) {
   remove_show_from_left()
+  navbar_width_scroll_control() 
 });
 
 function push_state(){
