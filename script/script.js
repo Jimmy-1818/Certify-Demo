@@ -136,10 +136,12 @@ const step_version = steps_info_container.querySelectorAll('.step_version')
 
 function info_back_btn(){
   remove_show_from_left()
+  history.back();
 }
 
 function info_back_btn_2(){
   remove_show_from_left()
+  history.back();
 
   //hide all version of info-steps version
   setTimeout(function(){
@@ -165,7 +167,7 @@ window.addEventListener("popstate", function(event) {
 function push_state(){
   // if (window.location.href == "http://127.0.0.1:5500/index.html"){
     var currentURL = window.location.href;
-    var newURL = currentURL + '';
+    var newURL = currentURL + 'info';
     var newState = { data: 'New state added' };
   
     history.pushState(newState, "info", newURL);  
