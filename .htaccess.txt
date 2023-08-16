@@ -1,2 +1,0 @@
-RewriteEngine On
-RewriteRule ^Certify-Demo/info$ /Certify-Demo/? [R=301,L]

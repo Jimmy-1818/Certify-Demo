@@ -140,14 +140,8 @@ function info_back_btn(){
 }
 
 function info_back_btn_2(){
-  remove_show_from_left()
+  remove_show_from_left();
   history.back();
-
-  //hide all version of info-steps version
-  setTimeout(function(){
-    step_version.forEach(step_version => {
-      step_version.classList.remove('show_version')
-    })}, 300)
 };
 
 
@@ -156,19 +150,23 @@ function remove_show_from_left(){
   show_from_left.forEach(show_from_left_element => {
     show_from_left_element.classList.remove("show_from_left");
     $(document.body).removeClass('overflow-hidden');
+  //hide all version of info-steps version
+  setTimeout(function(){
+    step_version.forEach(step_version => {
+      step_version.classList.remove('show_version')
+    })}, 300)
   }
 )};
 
 window.addEventListener("popstate", function(event) {
-  info_back_btn()
-  info_back_btn_2()
+  remove_show_from_left()
 });
 
 function push_state(){
   // if (window.location.href == "http://127.0.0.1:5500/index.html"){
     var currentURL = window.location.href;
-    var newURL = currentURL + 'info';
-    var newState = { data: 'New state added' };
+    var newURL = currentURL + '';
+    var newState = { data: 'info' };
   
     history.pushState(newState, "info", newURL);  
   // }
