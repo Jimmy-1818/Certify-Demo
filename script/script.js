@@ -170,7 +170,7 @@ window.addEventListener("popstate", function(event) {
 function push_state(){
   if (window.location.href == "http://127.0.0.1:5500/index.html"){
     var currentURL = window.location.href;
-    var newURL = currentURL + '/info';
+    var newURL = currentURL + 'info';
     var newState = { data: 'New state added' };
   
     history.pushState(newState, "info", newURL);  
