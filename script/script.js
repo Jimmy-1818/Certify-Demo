@@ -25,10 +25,9 @@ document.querySelector('#copy-hash').onclick = function(){
 const leftArrow = document.querySelectorAll('.scroll-left');
 const rightArrow = document.querySelectorAll('.scroll-right');
 const flex_container_steps = document.querySelectorAll('.flex_container_steps')
-const margin = 5
+const margin = 2
 
 function updateScrollArrows(DOM_object) {
-  const margin = 3;
   var container_width = DOM_object.clientWidth;
   var scroll_amount = DOM_object.scrollLeft;
   var overflowed_width = DOM_object.querySelector('.steps_container').clientWidth;
@@ -165,24 +164,12 @@ window.addEventListener("popstate", function(event) {
   info_back_btn_2()
 });
 
-
-
 function push_state(){
-  if (window.location.href == "http://127.0.0.1:5500/index.html"){
+  // if (window.location.href == "http://127.0.0.1:5500/index.html"){
     var currentURL = window.location.href;
-    var newURL = currentURL + 'info';
+    var newURL = currentURL;
     var newState = { data: 'New state added' };
   
     history.pushState(newState, "info", newURL);  
-  }
+  // }
 }
-
-
-
-window.addEventListener('DOMContentLoaded', function() {
-  // Controlla se l'URL corrente corrisponde alla stringa desiderata
-  if (window.location.href === 'http://127.0.0.1:5500/index.html/info') {
-      // Modifica l'URL per caricare la nuova pagina
-      window.location.href = 'http://127.0.0.1:5500/index.html';
-  }
-});
