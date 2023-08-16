@@ -101,6 +101,7 @@ const fact_info_container = document.querySelector('.fact-info-container')
 const back_btn_object = document.querySelector('#back_btn')
 
 function open_info(element_aimed){
+  push_state()
   fact_info_container.classList.add('show_from_left')
   back_btn_object.classList.add('show_from_left')
   var aimed_id = element_aimed.id
@@ -114,6 +115,16 @@ function open_info(element_aimed){
     }, 300);
   }
 };
+
+function open_steps(element_aimed){
+  push_state()
+  steps_info_container.classList.add('show_from_left')
+  back_btn_object_steps.classList.add('show_from_left')
+  var aimed_id = element_aimed.id
+  step_version[aimed_id-1].classList.add('show_version')
+};
+
+
 
 
 const steps_info_container = document.querySelector('.steps-info-container')
@@ -135,9 +146,19 @@ function info_back_btn_2(){
 };
 
 
-function open_steps(element_aimed){
-  steps_info_container.classList.add('show_from_left')
-  back_btn_object_steps.classList.add('show_from_left')
-  var aimed_id = element_aimed.id
-  step_version[aimed_id-1].classList.add('show_version')
-};
+
+window.addEventListener("popstate", function(event) {
+  const factInfoContainers = document.querySelectorAll(".show_from_left");
+  factInfoContainers.forEach(container => {
+      container.classList.remove("show_from_left");
+  });
+})
+
+
+function push_state(){
+  var currentURL = window.location.href;
+  var newURL = currentURL + '/info';
+  var newState = { data: 'New state added' };
+
+  history.pushState(newState, "New page", newURL);
+}
