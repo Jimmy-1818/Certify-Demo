@@ -2968,6 +2968,8 @@ div.fact-info-container button.back_btn{
   bottom: 2rem;
   right: calc(100% + .5rem);
   transition: right .3s, left .3s;
+  transition-timing-function: ease-out;
+
 
   background-position: 60%;
   background-size: 32%;
@@ -3057,7 +3059,9 @@ div.steps-info-container .full-page .paragraph .title-info:first-of-type{
  /* 25.2 */
 
 
-
+body.overflow-hidden{
+  overflow: hidden;
+}
 
 span.no-wrap {
   white-space: nowrap;

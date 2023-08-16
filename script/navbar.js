@@ -65,9 +65,7 @@ function hamburger_click(){
 };
 
 
-aggiugni il back con indietro
-e
-metti l'overflow hidden sui tasti per open_step()+ l'altro e chiudi su back_btn_object()
+// metti l'overflow hidden sui tasti per open_step()+ l'altro e chiudi su back_btn_object()
 
 // Get a list of lists of titles
 var titles_text = []
