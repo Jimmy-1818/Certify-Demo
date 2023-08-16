@@ -132,13 +132,11 @@ const back_btn_object_steps = document.querySelector('#back_btn2')
 const step_version = steps_info_container.querySelectorAll('.step_version')
 
 function info_back_btn(){
-  fact_info_container.classList.remove('show_from_left')
-  back_btn_object.classList.remove('show_from_left')
+  remove_info_state()
 }
 
 function info_back_btn_2(){
-  steps_info_container.classList.remove('show_from_left')
-  back_btn_object_steps.classList.remove('show_from_left')
+  remove_info_state()
   setTimeout(function(){
     step_version.forEach(step_version => {
       step_version.classList.remove('show_version')
@@ -148,12 +146,16 @@ function info_back_btn_2(){
 
 
 window.addEventListener("popstate", function(event) {
-  const factInfoContainers = document.querySelectorAll(".show_from_left");
-  factInfoContainers.forEach(container => {
-      container.classList.remove("show_from_left");
-  });
+  remove_info_state()
 })
 
+
+function remove_info_state(){
+  const factInfoContainers = document.querySelectorAll(".show_from_left");
+  factInfoContainers.forEach(container => {
+    container.classList.remove("show_from_left");
+  }
+)};
 
 function push_state(){
   var currentURL = window.location.href;
