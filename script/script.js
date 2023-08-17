@@ -75,7 +75,6 @@ const steps_container = document.querySelector('.steps-container')
 const back_btn_object_steps = document.querySelector('#back_btn2')
 const step_version = steps_container.querySelectorAll('.step_version')
 function open_steps(element_aimed){ 
-  console.log(steps_container)
   steps_container.classList.add('show_from_left')
   back_btn_object_steps.classList.add('show_from_left')
   var aimed_id = element_aimed.id
