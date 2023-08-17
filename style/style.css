@@ -2653,8 +2653,9 @@ section.card h1 {
   align-items: center;
   justify-content: center;
   margin: auto;
-  gap: 10%;
   flex-wrap: wrap;
+  gap: 3rem;
+  row-gap: 2rem;
 }
 
 .image_container_certifications .item {
