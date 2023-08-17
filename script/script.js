@@ -1,3 +1,5 @@
+
+//COPY BUTTON
 function copy_hash(htmlElement){
   if(!htmlElement){
     return
@@ -17,16 +19,13 @@ document.querySelector('#copy-hash').onclick = function(){
 }
 
 
-
-
-
-
-
 const leftArrow = document.querySelectorAll('.scroll-left');
 const rightArrow = document.querySelectorAll('.scroll-right');
 const flex_container_steps = document.querySelectorAll('.flex_container_steps')
 const margin = 2
 
+
+//MENAGE ARROWS IN SLIDESHOW
 function updateScrollArrows(DOM_object) {
   var container_width = DOM_object.clientWidth;
   var scroll_amount = DOM_object.scrollLeft;
@@ -58,6 +57,83 @@ function updateScrollArrows(DOM_object) {
   
 };
 
+function push_state(){
+  // if (window.location.href == "http://127.0.0.1:5500/index.html"){
+    var currentURL = window.location.href;
+    var newURL = currentURL + '';
+    var newState = { data: 'info' };
+  
+    history.pushState(newState, "info", newURL);  
+  // }
+}
+
+//OPEN CONTAINER FROM SLIDESHOWS
+
+//open then scroll to element by its ID
+const fact_info_container = document.querySelector('.fact-info-container')
+const back_btn_object = document.querySelector('#back_btn')
+function open_info(element_aimed){
+  push_state()
+  $(document.body).addClass('overflow-hidden');
+  change_logo_light()
+  desktop_nav.classList.remove("desktop_nav_shadow")
+  desktop_nav.classList.add("desktop_nav_dark")
+  desktop_nav.classList.remove("navbar-hide")
+
+  fact_info_container.classList.add('show_from_left')
+  back_btn_object.classList.add('show_from_left')
+  var aimed_id = element_aimed.id
+  var aimed_scroll_amount = document.querySelector('.full-page').querySelector(`.${aimed_id}`).offsetTop
+  if (aimed_id != null){    
+    setTimeout(function() {
+      fact_info_container.scrollTo({
+        top: aimed_scroll_amount - 122,
+        behavior: 'smooth'
+      })
+    }, 300);
+  }
+};
+
+//open then show only the right version by its ID
+const steps_info_container = document.querySelector('.steps-info-container')
+const back_btn_object_steps = document.querySelector('#back_btn2')
+const step_version = steps_info_container.querySelectorAll('.step_version')
+function open_steps(element_aimed){
+  push_state()
+  $(document.body).addClass('overflow-hidden');
+  change_logo_light()
+  desktop_nav.classList.remove("desktop_nav_shadow")
+  desktop_nav.classList.add("desktop_nav_dark")
+  desktop_nav.classList.remove("navbar-hide")
+  
+  steps_info_container.classList.add('show_from_left')
+  back_btn_object_steps.classList.add('show_from_left')
+  var aimed_id = element_aimed.id
+  step_version[aimed_id-1].classList.add('show_version')
+};
+
+
+
+function info_back_btn(){
+  remove_show_from_left()
+  history.back();
+  navbar_width_scroll_control() 
+}
+
+
+function remove_show_from_left(){
+  const show_from_left = document.querySelectorAll(".show_from_left");
+  show_from_left.forEach(show_from_left_element => {
+    show_from_left_element.classList.remove("show_from_left");
+    $(document.body).removeClass('overflow-hidden');
+  //hide all version of info-steps version
+  setTimeout(function(){
+    step_version.forEach(step_version => {
+      step_version.classList.remove('show_version')
+    })}, 300)
+  }
+)};
+
 // throw the function once: LOADED, SCROLL slideshow, RESIZE vindow
 document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener("resize", function(){
@@ -71,8 +147,6 @@ document.addEventListener('DOMContentLoaded', function() {
       updateScrollArrows(f_container_steps)});
     });
 });
-
-
 leftArrow.forEach(left_arrow => {
   left_arrow.addEventListener('click', function() {
     var contentContainer = this.parentElement
@@ -96,90 +170,7 @@ rightArrow.forEach(right_arrow => {
 
 
 
-const fact_info_container = document.querySelector('.fact-info-container')
-const back_btn_object = document.querySelector('#back_btn')
-
-function open_info(element_aimed){
-  push_state()
-  $(document.body).addClass('overflow-hidden');
-  change_logo_light()
-  desktop_nav.classList.remove("desktop_nav_shadow")
-  desktop_nav.classList.add("desktop_nav_dark")
-  desktop_nav.classList.remove("navbar-hide")
-
-  fact_info_container.classList.add('show_from_left')
-  back_btn_object.classList.add('show_from_left')
-  var aimed_id = element_aimed.id
-  var aimed_scroll_amount = document.querySelector('.full-page').querySelector(`.${aimed_id}`).offsetTop
-  if (aimed_id != null){    
-    setTimeout(function() {
-      fact_info_container.scrollTo({
-        top: aimed_scroll_amount - 122,
-        behavior: 'smooth'
-      })
-    }, 300);
-  }
-};
-
-function open_steps(element_aimed){
-  push_state()
-  $(document.body).addClass('overflow-hidden');
-  change_logo_light()
-  desktop_nav.classList.remove("desktop_nav_shadow")
-  desktop_nav.classList.add("desktop_nav_dark")
-  desktop_nav.classList.remove("navbar-hide")
-
-  steps_info_container.classList.add('show_from_left')
-  back_btn_object_steps.classList.add('show_from_left')
-  var aimed_id = element_aimed.id
-  step_version[aimed_id-1].classList.add('show_version')
-};
-
-
-
-
-const steps_info_container = document.querySelector('.steps-info-container')
-const back_btn_object_steps = document.querySelector('#back_btn2')
-const step_version = steps_info_container.querySelectorAll('.step_version')
-
-function info_back_btn(){
-  remove_show_from_left()
-  history.back();
-  navbar_width_scroll_control() 
-  
-}
-
-function info_back_btn_2(){
-  remove_show_from_left();
-  history.back();
-  navbar_width_scroll_control() 
-};
-
-
-function remove_show_from_left(){
-  const show_from_left = document.querySelectorAll(".show_from_left");
-  show_from_left.forEach(show_from_left_element => {
-    show_from_left_element.classList.remove("show_from_left");
-    $(document.body).removeClass('overflow-hidden');
-  //hide all version of info-steps version
-  setTimeout(function(){
-    step_version.forEach(step_version => {
-      step_version.classList.remove('show_version')
-    })}, 300)
-  }
-)};
-
 window.addEventListener("popstate", function(event) {
   remove_show_from_left()
   navbar_width_scroll_control() 
 });
-
-function push_state(){
-  // if (window.location.href == "http://127.0.0.1:5500/index.html"){
-    var currentURL = window.location.href;
-    var newURL = currentURL + '';
-    var newState = { data: 'info' };
-  
-    history.pushState(newState, "info", newURL);  
-  // }
-}
