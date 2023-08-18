@@ -2924,6 +2924,32 @@ img.map {
 .outer_container .flex_container_steps .steps_container .tab:nth-of-type(1) .tab_content div.icon {
   background-image: url(../images/icons-info/info.svg);
 }
+.info-container .paragraph h2{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.info-container .paragraph h2 div{
+  height: 100%;
+  display: inline-block;
+  width: 3rem;
+  aspect-ratio: 1;
+  background-size: cover;
+  position: relative;
+  top: -1px;
+}
+.info-container .paragraph:nth-of-type(1) h2 div{
+  background-image: url(../images/icons-info/info.svg);
+}
+.info-container .paragraph:nth-of-type(2) h2 div{
+  background-image: url(../images/icons-info/smell.svg);
+}
+.info-container .paragraph:nth-of-type(3) h2 div{
+  background-image: url(../images/icons-info/pair.svg);
+}
+.info-container .paragraph:nth-of-type(4) h2 div{
+  background-image: url(../images/icons-info/analytics.svg);
+}
 
 .outer_container .flex_container_steps .steps_container .tab:nth-of-type(2) .tab_content {
   background-image: url(../images/icons-info/smell_bg.svg);
