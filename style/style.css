@@ -1864,11 +1864,11 @@ main.index3 {
   grid-row-gap: 1rem;
 
   position: relative;
-  top: 10%;
+  top: 7%;
   margin: auto;
   padding: 0 10vw;
   width: clamp(320px, 100vw, 2000px);
-  height: 75%;
+  height: 85%;
 
   place-items: center;
 }
@@ -1888,7 +1888,7 @@ main.index3 {
     top: calc(50% - 36px);
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 50%;
+    height: 55%;
     align-items: center;
   }
 
@@ -1899,7 +1899,65 @@ main.index3 {
 }
 
 
+header.choice .header_container div.other_products_buttons{
+  height: fit-content;
+  max-height: 13rem;
+  width: 4.5rem;
+  background: #09435e;
+  position: absolute;
+  border-radius: 99rem;
+  top: 34%;
+  right: 10vw;
+  transform: translate(0%, -50%);
+  display: flex;
+  flex-direction: column;
+  padding: 0.65rem 0.5rem;
+  overflow-y: auto;
+}
+@media (min-width: 1024px){
+  header.choice .header_container div.other_products_buttons{
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 40%;
+    right: auto
+  }
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+header.choice .header_container div.other_products_buttons::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+header.choice .header_container div.other_products_buttons{
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
 
+header.choice .header_container div.other_products_buttons .button{
+  width: 100%;
+  aspect-ratio: 1;
+  background: white;
+  border-radius: 99rem;
+  flex: 0 0 auto;
+  margin-bottom: .5rem;
+  background-size: 90%;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+header.choice .header_container div.other_products_buttons .button:nth-of-type(1){
+  background-image: url(../images/icons-info/label.svg);
+}
+header.choice .header_container div.other_products_buttons .button:nth-of-type(2){
+  background-image: url(../images/icons-info/bottle.svg);
+  background-size: 30%
+}
+header.choice .header_container div.other_products_buttons .button:nth-of-type(3){
+  background-image: url(../images/icons-info/cork.svg);
+  background-size: 40%
+}
+header.choice .header_container div.other_products_buttons .button:last-of-type{
+  margin-bottom: 0;
+}
 
 header.choice .header_container h1.header_original_product {
   grid-area: 1 / 1 / 2 / 2;
@@ -1977,7 +2035,7 @@ header.choice {
 header.choice .header_container h1,
 header.choice .header_container div.header_verify {
   font-weight: bold;
-  font-size: 2rem;
+  font-size: clamp(1.8rem, 1.2vw, 4rem);
   white-space: wrap;
   text-align: center;
   width: 100%;
@@ -1987,7 +2045,6 @@ header.choice .header_container div.header_verify {
 
 @media (min-width: 1024px) {
   header.choice .header_container h1 {
-    font-size: clamp(.4rem, 1.2vw, 4rem);
     white-space: nowrap;
     text-align: left;
   }
