@@ -2987,7 +2987,6 @@ img.map {
   align-items: center;
 }
 .info-container .paragraph h2 div{
-  height: 100%;
   display: inline-block;
   width: 3rem;
   aspect-ratio: 1;
@@ -2995,6 +2994,8 @@ img.map {
   position: relative;
   top: -1px;
 }
+
+
 .info-container .paragraph:nth-of-type(1) h2 div{
   background-image: url(../images/icons-info/info.svg);
 }
@@ -3030,6 +3031,29 @@ img.map {
 
 .outer_container .flex_container_steps .steps_container .tab:nth-of-type(4) .tab_content div.icon {
   background-image: url(../images/icons-info/analytics.svg);
+}
+
+/* Map */
+h2.place-h2{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin: 0 auto 1.4rem auto;
+}
+h2.place-h2 div.place-icon{
+  background-image: url(../images/icons/map.svg);
+  display: inline-block;
+  width: 3rem;
+  aspect-ratio: 1;
+  background-size: cover;
+  position: relative;
+  top: -1px;
+}
+iframe.map{
+  max-width: 100%;
+  display: block;
+  margin: auto;
+  border-radius: 1rem;
 }
 
 
