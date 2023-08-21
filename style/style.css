@@ -3108,7 +3108,8 @@ div.general_left_container .full-page div.paragraph{
   margin-bottom: 4rem;
 }
 div.general_left_container .full-page div.paragraph:last-of-type{
-  margin-bottom: 7rem;
+  margin-bottom: 0rem;
+  padding-bottom: 7rem;
 }
 
 div.general_left_container button.back_btn{
