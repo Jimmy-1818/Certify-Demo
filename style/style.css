@@ -3090,13 +3090,14 @@ div.general_left_container .full-page{
   width: 100%;
   padding-right: 10%;
   padding-left: 10%;
-  min-height: calc(100vh - 125px);
+  min-height: 700px;
 }
 @media (min-width: 1024px){
   div.general_left_container .full-page{
     width: 100%;
     padding-right: 15%;
     padding-left: 15%;
+    min-height: calc(100vh - 125px);
   }
 }
 div.general_left_container .full-page .paragraph .title-info{
