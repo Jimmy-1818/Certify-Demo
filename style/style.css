@@ -1959,13 +1959,26 @@ header.choice .header_container div.other_products_buttons .button:last-of-type{
   margin-bottom: 0;
 }
 
-header.choice .header_container h1.header_original_product {
+header.choice .header_container .header_original_product {
   grid-area: 1 / 1 / 2 / 2;
   width: 125%;
   /* 1.25 * 0.80 (parent width) */
   background: #0abab5;
   padding: 0.6rem 0;
   color: white;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+@media (min-width: 1024px){
+  header.choice .header_container .header_original_product {
+    justify-content: start;
+    padding: 0;
+  }
+}
+header.choice .header_container .header_original_product h1{
+  width: fit-content;
 }
 
 .header_image {
@@ -1998,11 +2011,12 @@ header.choice .header_container h1.header_product_name {
     padding: 0;
   }
 
-  header.choice .header_container h1.header_original_product {
+  header.choice .header_container .header_original_product {
     grid-area: 1 / 2 / 2 / 3;
     width: 100%;
     padding: 0;
     background: none;
+    color: black;
   }
   header.choice .header_container h1.header_product_name {
     grid-area: 2 / 2 / 3 / 3
@@ -2056,8 +2070,22 @@ header.choice .header_container div.header_verify {
   }
 }
 
-header.choice .header_container h1:nth-of-type(1) img {
-  height: 3rem;
+header.choice .header_container .header_original_product div.brandmark{
+  height: 2rem;
+  aspect-ratio: 1;
+  background-image: url(../images/brandmark-w.png);
+  margin-left: 1rem; 
+  display: inline-block;
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 1024px) {
+  header.choice .header_container .header_original_product div.brandmark{
+    background-image: url(../images/brandmark.png);
+    height: 2.2rem;
+  }
 }
 
 header.choice .header_hash img {
@@ -2092,13 +2120,13 @@ header.choice .header_hash span#hash::-webkit-scrollbar {
 }
 
 @media (min-width: 1024px) {
-  header.choice .header_container h1:nth-of-type(3) {
+  header.choice .header_container h1:nth-of-type(2) {
     margin: auto;
   }
 }
 
 @media (min-width: 1024px) {
-  header.choice .header_container h1:nth-of-type(3) {
+  header.choice .header_container h1:nth-of-type(2) {
     margin: 0;
   }
 }
@@ -2118,14 +2146,15 @@ header.choice .header_container div.verify_in_genuiny svg {
   width: auto;
   position: relative;
   top: -2px;
-  margin-left: .4rem;
+  margin-left: 1rem;
 }
 
 header.choice .header_container div.verify_in_genuiny {
   background: #0abab5;
   width: fit-content;
   padding: 2% 4%;
-  display: inline-block;
+  display: flex;
+  align-items: center;
   color: white;
   border-radius: 1rem;
 }
