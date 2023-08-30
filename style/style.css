@@ -2718,7 +2718,7 @@ section.card h1 {
 }
 
 .nutritional_table tbody tr:nth-of-type(odd) {
-  background: beige;
+  background: white;
 }
 
 
@@ -2895,6 +2895,7 @@ img.map {
   gap: 1rem;
   height: 40%;
   padding-right: .5rem;
+  background: #0abab5;
 }
 
 .outer_container .flex_container_steps .steps_container .step div.step_text p {
@@ -2904,6 +2905,7 @@ img.map {
   padding: 1rem .5rem 1rem 1rem;
   display: inline-block;
   margin: auto;
+  color: white;
 }
 
 /* to set the width of the track */
@@ -2938,7 +2940,7 @@ img.map {
   min-width: 180px;
   min-height: 60px;
   height: 8rem;
-  background-color: #f0f0f0;
+  background-color: #0abab5;
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 8px -4px 5px 0px #00000026;
