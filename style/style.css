@@ -1903,7 +1903,7 @@ header.choice .header_container div.other_products_buttons{
   height: fit-content;
   max-height: 13rem;
   width: 4.5rem;
-  background: #09435e;
+  background: #0abab5;
   position: absolute;
   border-radius: 99rem;
   top: 34%;
@@ -1963,8 +1963,9 @@ header.choice .header_container h1.header_original_product {
   grid-area: 1 / 1 / 2 / 2;
   width: 125%;
   /* 1.25 * 0.80 (parent width) */
-  background: #0abab560;
+  background: #0abab5;
   padding: 0.6rem 0;
+  color: white;
 }
 
 .header_image {
@@ -2021,7 +2022,9 @@ header.choice .header_container h1.header_product_name {
   }
 }
 
-
+.header_visit a{
+  color: #0abab5
+}
 
 header.choice {
   padding-top: 63px;
