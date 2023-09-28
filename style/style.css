@@ -2772,9 +2772,12 @@ section.card h1 {
 }
 
 img.map {
-  width: 60%;
+  width: 90%;
   margin: auto;
   display: block;
+  max-width: 500px;
+  border-radius: 1rem;
+  border: 4px solid #0abab5;
 }
 
 
@@ -3082,13 +3085,6 @@ h2.place-h2 div.place-icon{
   background-size: cover;
   position: relative;
   top: -1px;
-}
-img.map{
-  max-width: 100%;
-  display: block;
-  margin: auto;
-  border-radius: 1rem;
-  border: 4px solid #0abab5;
 }
 
 
