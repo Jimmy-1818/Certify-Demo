@@ -3083,11 +3083,12 @@ h2.place-h2 div.place-icon{
   position: relative;
   top: -1px;
 }
-iframe.map{
+img.map{
   max-width: 100%;
   display: block;
   margin: auto;
   border-radius: 1rem;
+  border: 4px solid #0abab5;
 }
 
 
