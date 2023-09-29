@@ -2693,7 +2693,7 @@ header.choice {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
-  margin: auto auto 10rem auto;
+  margin: auto auto 5rem auto;
   --bs-card-border-width: none;
   padding-left: 5%;
   padding-right: 5%;
@@ -3235,6 +3235,15 @@ div.steps-container .full-page .paragraph .title-info:first-of-type{
   margin-top: 4rem
 }
 
+.footer-link{
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: bold;
+}
+.footer-link a{
+  color: #0abab5;
+  text-decoration: none;
+}
 
 /* body{
   overflow: hidden;
@@ -3250,6 +3259,7 @@ div.steps-container .full-page .paragraph .title-info:first-of-type{
 body.overflow-hidden{
   overflow: hidden;
 }
+
 
 span.no-wrap {
   white-space: nowrap;
